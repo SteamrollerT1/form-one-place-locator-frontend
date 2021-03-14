@@ -38,11 +38,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/css/**", "/ajax.cloudflare.com/**", "/images/**").permitAll()
+                .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/accounts")
+                .defaultSuccessUrl("/login")
                 .failureUrl("/error")
                 .loginPage("/login").permitAll()
                 .failureUrl("/login?error=true")
