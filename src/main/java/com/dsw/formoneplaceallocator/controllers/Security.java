@@ -14,7 +14,7 @@ public class Security {
 
     @GetMapping("/login")
     String login() {
-        return "student/registration";
+        return "auth-login";
     }
 
 

@@ -40,88 +40,185 @@
                 </div>
                 <!-- end page title -->
 
-                <div class="col-xl-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Bootstrap Validation - Normal</h4>
-                            <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5
-                                form validation–available in all our supported browsers.</p>
-                            <form class="needs-validation" novalidate>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="validationCustom01">First name</label>
-                                            <input type="text" class="form-control" id="validationCustom01"
-                                                   placeholder="First name" value="Mark" required>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Student Registration</h4>
+                        <p class="card-title-desc"> Please fill in all required fields marked with <label
+                                class="text-danger">*</label></p>
+                        <form class="needs-validation" novalidate method="post" th:object="${dto}">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" class="form-control" required
+                                               id="firstname">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" class="form-control" required
+                                               id="lastname">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="dob">Date of birth</label>
+                                        <input type="date" class="form-control" required
+                                               id="dob">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cellphone">Cellphone</label>
+                                        <input type="text" class="form-control" required
+                                               id="cellphone">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="telephone">Telephone</label>
+                                        <input type="text" class="form-control" required
+                                               id="telephone">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" class="form-control" required
+                                               id="email">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="address">Address</label>
+                                        <input type="text" class="form-control" required
+                                               id="address">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="suburb">Suburb</label>
+                                        <input type="text" class="form-control" required
+                                               id="suburb">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="city">City</label>
+                                        <input type="text" class="form-control" required
+                                               id="city">
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <div class="custom-file">
+                                            <label class="custom-file-label" for="birth-certificate">Birth
+                                                certificate</label>
+                                            <input type="file" class="custom-file-input form-control"
+                                                   id="birth-certificate" required>
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="validationCustom02">Last name</label>
-                                            <input type="text" class="form-control" id="validationCustom02"
-                                                   placeholder="Last name" value="Otto" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <div class="custom-file">
+                                            <label class="custom-file-label" for="results-statement">Results
+                                                statement</label>
+                                            <input type="file" class="custom-file-input form-control" required
+                                                   id="results-statement">
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="validationCustom03">City</label>
-                                            <input type="text" class="form-control" id="validationCustom03"
-                                                   placeholder="City" required>
-                                            <div class="invalid-feedback">
-                                                Please provide a valid city.
-                                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="username">Username</label>
+                                        <input type="text" class="form-control"
+                                               id="username" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="validationCustom04">State</label>
-                                            <input type="text" class="form-control" id="validationCustom04"
-                                                   placeholder="State" required>
-                                            <div class="invalid-feedback">
-                                                Please provide a valid state.
-                                            </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="username">Password</label>
+                                        <input type="password" class="form-control"
+                                               id="password" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="validationCustom05">Zip</label>
-                                            <input type="text" class="form-control" id="validationCustom05"
-                                                   placeholder="Zip" required>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="invalidCheck"
+                                                   required>
+                                            <label class="form-check-label" for="invalidCheck">Agree to terms and
+                                                conditions</label>
                                             <div class="invalid-feedback">
-                                                Please provide a valid zip.
+                                                You must agree before submitting.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="invalidCheck"
-                                                       required>
-                                                <label class="form-check-label" for="invalidCheck">Agree to terms and
-                                                    conditions</label>
-                                                <div class="invalid-feedback">
-                                                    You must agree before submitting.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Submit form</button>
-                            </form>
-                        </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </form>
                     </div>
-                    <!-- end card -->
-                </div> <!-- end col -->
+                </div>
+                <!-- end card -->
 
             </div> <!-- container-fluid -->
         </div>
