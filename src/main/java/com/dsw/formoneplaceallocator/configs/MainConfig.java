@@ -19,10 +19,10 @@ import org.springframework.web.client.RestTemplate;
         "com.dsw.formoneplaceallocator.controllers"})
 public class MainConfig {
 
-    @Value("${back_username}")
+    @Value("${back.username}")
     private String backApiUser;
 
-    @Value("${back_password}")
+    @Value("${back.password}")
     private String backPassword;
 
     @Bean
