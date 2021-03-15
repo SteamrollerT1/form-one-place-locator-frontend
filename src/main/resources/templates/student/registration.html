@@ -1,22 +1,18 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:include="fragments/head :: head"/>
-
+<th:block th:replace="fragments/head :: head"/>
+<!-- Plugins css -->
+<link th:href="@{libs/dropzone/min/dropzone.min.css}" rel="stylesheet" type="text/css"/>
 
 <body>
-
-<!-- <body data-layout="horizontal" data-topbar="colored"> -->
 
 <!-- Begin page -->
 <div id="layout-wrapper">
 
+    <th:block th:replace="fragments/page-topbar :: page-topbar"/>
 
-    <th:block th:include="fragments/page-topbar :: page-topbar"/>
-    <!-- ========== Left Sidebar Start ========== -->
-    <th:block th:include="fragments/vertical-menu :: vertical-menu"/>
-    <!-- Left Sidebar End -->
-
+    <th:block th:replace="fragments/vertical-menu :: vertical-menu"/>
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -30,11 +26,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-flex align-items-center justify-content-between">
-                            <h4 class="mb-0">Register Student</h4>
+                            <h4 class="mb-0">Wizard</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Fields with <label style="color: darkred">*</label> are mandatory</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                    <li class="breadcrumb-item active">Wizard</li>
                                 </ol>
                             </div>
 
@@ -43,226 +40,94 @@
                 </div>
                 <!-- end page title -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Basic Wizard</h4>
-
-                                <div id="basic-example">
-                                    <!-- Seller Details -->
-                                    <h3>Seller Details</h3>
-                                    <section>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-firstname-input">First name</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-firstname-input">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-lastname-input">Last name</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-lastname-input">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-phoneno-input">Phone</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-phoneno-input">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-email-input">Email</label>
-                                                        <input type="email" class="form-control"
-                                                               id="basicpill-email-input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-address-input">Address</label>
-                                                        <textarea id="basicpill-address-input" class="form-control"
-                                                                  rows="2"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </section>
-
-                                    <!-- Company Document -->
-                                    <h3>Company Document</h3>
-                                    <section>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-pancard-input">PAN Card</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-pancard-input">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-vatno-input">VAT/TIN No.</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-vatno-input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-cstno-input">CST No.</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-cstno-input">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-servicetax-input">Service Tax No.</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-servicetax-input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-companyuin-input">Company UIN</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-companyuin-input">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-declaration-input">Declaration</label>
-                                                        <input type="text" class="form-control"
-                                                               id="basicpill-Declaration-input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </section>
-
-                                    <!-- Bank Details -->
-                                    <h3>Bank Details</h3>
-                                    <section>
-                                        <div>
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="basicpill-namecard-input">Name on Card</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="basicpill-namecard-input">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label>Credit Card Type</label>
-                                                            <select class="form-select">
-                                                                <option selected>Select Card Type</option>
-                                                                <option value="AE">American Express</option>
-                                                                <option value="VI">Visa</option>
-                                                                <option value="MC">MasterCard</option>
-                                                                <option value="DI">Discover</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="basicpill-cardno-input">Credit Card
-                                                                Number</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="basicpill-cardno-input">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="basicpill-card-verification-input">Card
-                                                                Verification Number</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="basicpill-card-verification-input">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="basicpill-expiration-input">Expiration
-                                                                Date</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="basicpill-expiration-input">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </section>
-
-                                    <!-- Confirm Details -->
-                                    <h3>Confirm Detail</h3>
-                                    <section>
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-6">
-                                                <div class="text-center">
-                                                    <div class="mb-4">
-                                                        <i class="mdi mdi-check-circle-outline text-success display-4"></i>
-                                                    </div>
-                                                    <div>
-                                                        <h5>Confirm Detail</h5>
-                                                        <p class="text-muted">If several languages coalesce, the grammar
-                                                            of the resulting</p>
-                                                    </div>
-                                                </div>
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Bootstrap Validation - Normal</h4>
+                            <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5
+                                form validation–available in all our supported browsers.</p>
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="validationCustom01">First name</label>
+                                            <input type="text" class="form-control" id="validationCustom01"
+                                                   placeholder="First name" value="Mark" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
                                             </div>
                                         </div>
-                                    </section>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="validationCustom02">Last name</label>
+                                            <input type="text" class="form-control" id="validationCustom02"
+                                                   placeholder="Last name" value="Otto" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-                            </div>
-                            <!-- end card body -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="validationCustom03">City</label>
+                                            <input type="text" class="form-control" id="validationCustom03"
+                                                   placeholder="City" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid city.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="validationCustom04">State</label>
+                                            <input type="text" class="form-control" id="validationCustom04"
+                                                   placeholder="State" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid state.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="validationCustom05">Zip</label>
+                                            <input type="text" class="form-control" id="validationCustom05"
+                                                   placeholder="Zip" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid zip.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="invalidCheck"
+                                                       required>
+                                                <label class="form-check-label" for="invalidCheck">Agree to terms and
+                                                    conditions</label>
+                                                <div class="invalid-feedback">
+                                                    You must agree before submitting.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </form>
                         </div>
-                        <!-- end card -->
                     </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-
+                    <!-- end card -->
+                </div> <!-- end col -->
 
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
 
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script>
-                        © Form One Student Registration
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <th:block th:replace="fragments/footer :: footer"/>
     </div>
     <!-- end main content-->
 
@@ -270,55 +135,7 @@
 <!-- END layout-wrapper -->
 
 <!-- Right Sidebar -->
-<div class="right-bar">
-    <div data-simplebar class="h-100">
-
-        <div class="rightbar-title d-flex align-items-center px-3 py-4">
-
-            <h5 class="m-0 me-2">Settings</h5>
-
-            <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                <i class="mdi mdi-close noti-icon"></i>
-            </a>
-        </div>
-
-
-        <!-- Settings -->
-        <hr class="mt-0"/>
-        <h6 class="text-center mb-0">Choose Layouts</h6>
-
-        <div class="p-4">
-            <div class="mb-2">
-                <img th:src="@{images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked/>
-                <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-            </div>
-
-            <div class="mb-2">
-                <img th:src="@{images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
-                       data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css"/>
-                <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-            </div>
-
-            <div class="mb-2">
-                <img th:src="@{images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="form-check form-switch mb-5">
-                <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch"
-                       data-appStyle="assets/css/app-rtl.min.css"/>
-                <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
-            </div>
-
-
-        </div>
-
-    </div> <!-- end slimscroll-menu-->
-</div>
+<th:block th:replace="fragments/right-bar :: right-bar"/>
 <!-- /Right-bar -->
 
 <!-- Right bar overlay-->
@@ -336,12 +153,13 @@
 <!-- jquery step -->
 <script th:src="@{libs/jquery-steps/build/jquery.steps.min.js}"></script>
 
-<!-- form wizard init -->
-<script th:src="@{js/pages/form-wizard.init.js}"></script>
+<!-- parsleyjs -->
+<script th:src="@{libs/parsleyjs/parsley.min.js}"></script>
+
+<script th:src="@{js/pages/form-validation.init.js}"></script>
 
 <script th:src="@{js/app.js}"></script>
 
 </body>
-
 
 </html>
